@@ -23,6 +23,8 @@ brew_casks=(
 	rectangle
 	maccy
 	raycast
+	google-chrome
+	fork
 )
 
 echo "Installing brew casks"
@@ -77,3 +79,12 @@ nvim --headless "+Lazy! sync" +qa
 
 # Make sure tmux config is setup
 tmux source-file ~/.config/tmux/tmux.conf
+
+# Set chrome as default browser
+echo "Setting chrome as default browser"
+open -a "Google Chrome" --args --make-default-browser
+
+# Install font
+echo "Installing font"
+brew tap homebrew/cask-fonts
+brew install --cask font-jetbrains-mono-nerd-font
