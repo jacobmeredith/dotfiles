@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-nvm zsh-autosuggestions zsh-syntax-highlighting)
 
 ZSH_THEME="gruvbox"
 SOLARIZED_THEME="dark"
