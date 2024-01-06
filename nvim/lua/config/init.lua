@@ -1,3 +1,21 @@
+-- Highlight on yank
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
+require("config.theme")
+require("config.telescope")
+require("config.treesitter")
+require("config.which-key")
+require("config.lsp")
+require("config.cmp")
+require("config.git")
+
 vim.o.hlsearch = false
 
 vim.o.scrolloff = 9999
@@ -23,21 +41,3 @@ vim.o.termguicolors = true
 vim.opt.fillchars = { eob = " " }
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
-
-require("config.theme")
-require("config.telescope")
-require("config.treesitter")
-require("config.which-key")
-require("config.lsp")
-require("config.cmp")
-require("config.git")
