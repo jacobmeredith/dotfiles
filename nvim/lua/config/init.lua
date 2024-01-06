@@ -1,5 +1,3 @@
-vim.cmd.colorscheme("gruvbox")
-
 vim.o.hlsearch = false
 
 vim.o.scrolloff = 9999
@@ -15,14 +13,14 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.wo.signcolumn = "yes"
-
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 vim.o.completeopt = true
 
 vim.o.termguicolors = true
+
+vim.opt.fillchars = { eob = " " }
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -36,4 +34,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+require("config.theme")
 require("config.telescope")
+require("config.treesitter")
+require("config.which-key")
+require("config.lsp")
+require("config.cmp")
+require("config.git")
