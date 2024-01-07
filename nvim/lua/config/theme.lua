@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("catppuccin")
 
 vim.wo.signcolumn = "yes"
 vim.wo.listchars = ""
