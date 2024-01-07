@@ -26,4 +26,4 @@ x = 0
 y = 0
 
 [window]
-decorations = "None"
+decorations = "Buttonless"
