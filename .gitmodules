@@ -16,3 +16,6 @@
 [submodule "tmux/tmux/plugins/tmux"]
 	path = tmux/tmux/plugins/tmux
 	url = git@github.com:catppuccin/tmux
+[submodule "alacritty/alacritty/themes/themes"]
+	path = alacritty/alacritty/themes/themes
+	url = git@github.com:alacritty/alacritty-theme.git

@@ -1,4 +1,4 @@
-export ZSH="$HOME/.oh-my-zsh"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
 
 export NVM_DIR=~/.nvm
 
@@ -13,13 +13,14 @@ export PATH=/opt/homebrew/bin:$PATH:$GOPATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-
 plugins=(git zsh-syntax-highlighting)
 
-ZSH_THEME="gruvbox"
-SOLARIZED_THEME="dark"
-
-source $ZSH/oh-my-zsh.sh
 source $(brew --prefix nvm)/nvm.sh
 
 alias vim=nvim
+
+alias gs="git status"
+alias gd="git commit"
+alias gd="git diff"
+alias gch="git checkout"
+alias gaa="git add ."

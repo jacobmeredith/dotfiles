@@ -17,10 +17,12 @@ vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc =
 -- Use <space><space> to open list of open buffers
 vim.keymap.set("n", "<leader><space>", function()
   require("telescope.builtin").buffers(require("telescope.themes").get_dropdown {
-    winblend = 10,
     previewer = false
   })
 end, { desc = "[ ] Find open buffers" })
+
+-- Use <space><space>p to open list of open buffers with preview
+vim.keymap.set("n", "<leader><space>p", require("telescope.builtin").buffers, { desc = "[ p] Find open buffers" })
 
 -- Use <space>/ to search in current buffer
 vim.keymap.set("n", "<leader>/", function()

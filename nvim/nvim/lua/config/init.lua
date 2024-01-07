@@ -15,6 +15,7 @@ require("config.which-key")
 require("config.lsp")
 require("config.cmp")
 require("config.git")
+require("config.lualine")
 
 vim.o.hlsearch = false
 
