@@ -16,6 +16,7 @@ require("config.lsp")
 require("config.cmp")
 require("config.git")
 require("config.lualine")
+require("config.conform")
 
 vim.o.hlsearch = false
 
