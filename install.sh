@@ -15,6 +15,7 @@ brew install tree-sitter
 brew install ripgrep
 brew install yarn
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
+brew install fastfetch
 
 brew install --cask alacritty
 brew install --cask font-jetbrains-mono-nerd-font

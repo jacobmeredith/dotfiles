@@ -1,5 +1,3 @@
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
-
 export NVM_DIR=~/.nvm
 
 export GOPATH=$HOME/go
@@ -9,6 +7,8 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 export PATH=/opt/homebrew/bin:$PATH:$GOPATH
+
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -26,4 +26,6 @@ alias gd="git diff"
 alias gp="git push"
 alias gch="git checkout"
 alias gaa="git add ."
-alias gap="git add -A && git commit -m"
+alias gac="git add -A && git commit -m"
+
+fastfetch

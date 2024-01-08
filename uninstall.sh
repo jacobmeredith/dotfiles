@@ -16,6 +16,8 @@ brew uninstall wget
 brew uninstall tree-sitter
 brew uninstall ripgrep
 brew uninstall yarn
+brew uninstall fastfetch
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 brew uninstall --cask alacritty
 brew uninstall --cask font-jetbrains-mono-nerd-font
