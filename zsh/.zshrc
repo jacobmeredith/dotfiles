@@ -21,7 +21,9 @@ alias vim=nvim
 
 alias ga="git add"
 alias gs="git status"
-alias gc="git commit"
+alias gc="git commit -m"
 alias gd="git diff"
+alias gp="git push"
 alias gch="git checkout"
 alias gaa="git add ."
+alias gap="git add -A && git commit -m"
