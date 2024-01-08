@@ -80,7 +80,7 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-  gopls = {},
+  -- gopls = {},
   rust_analyzer = {},
   tsserver = {},
   html = {},
