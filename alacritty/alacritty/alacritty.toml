@@ -27,3 +27,6 @@ y = 0
 
 [window]
 decorations = "Buttonless"
+
+[window.padding]
+y = 10
