@@ -1,21 +1,21 @@
 export NVM_DIR=~/.nvm
 
-export GOPATH=$HOME/go
-export GOROOT=/opt/homebrew/opt/go/libexec
-
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-
-export PATH=/opt/homebrew/bin:$PATH:$GOPATH
-
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PATH=/opt/homebrew/bin:$PATH
 
 plugins=(git zsh-syntax-highlighting)
 
 source $(brew --prefix nvm)/nvm.sh
+
+# pnpm
+export PNPM_HOME="/Users/jacobmeredith/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 
 alias vim=nvim
 

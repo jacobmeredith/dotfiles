@@ -10,6 +10,6 @@ require("conform").setup({
     typescriptreact = { "prettier", "eslint_d" },
     css = { "prettier" },
     html = { "prettier" },
-    go = { "gopls" },
+    -- go = { "gopls" },
   }
 })
