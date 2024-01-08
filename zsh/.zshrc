@@ -20,7 +20,7 @@ source $(brew --prefix nvm)/nvm.sh
 alias vim=nvim
 
 alias gs="git status"
-alias gd="git commit"
+alias gc="git commit"
 alias gd="git diff"
 alias gch="git checkout"
 alias gaa="git add ."
