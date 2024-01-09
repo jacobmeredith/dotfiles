@@ -2,6 +2,8 @@ export NVM_DIR=~/.nvm
 
 export PATH=/opt/homebrew/bin:$PATH
 
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
+
 plugins=(git zsh-syntax-highlighting)
 
 source $(brew --prefix nvm)/nvm.sh
