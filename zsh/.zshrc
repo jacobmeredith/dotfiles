@@ -1,7 +1,5 @@
 export NVM_DIR=~/.nvm
 
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
-
 export PATH=/opt/homebrew/bin:$PATH
 
 plugins=(git zsh-syntax-highlighting)
@@ -21,7 +19,7 @@ alias vim=nvim
 
 alias ga="git add"
 alias gs="git status"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gd="git diff"
 alias gp="git push"
 alias gch="git checkout"
