@@ -82,7 +82,8 @@ end
 local servers = {
   -- gopls = {},
   rust_analyzer = {},
-  tsserver = {},
+  tsserver = {
+  },
   html = {},
   lua_ls = {
     Lua = {
@@ -105,6 +106,8 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
+local lsputil = require("lspconfig.util")
+
 mason_lspconfig.setup_handlers {
   function(server_name)
     require("lspconfig")[server_name].setup {
@@ -112,6 +115,7 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
+      root_dir = lsputil.root_pattern(".git"),
     }
   end
 }
