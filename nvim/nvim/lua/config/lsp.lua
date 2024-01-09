@@ -82,7 +82,8 @@ end
 local servers = {
   -- gopls = {},
   rust_analyzer = {},
-  tsserver = {},
+  tsserver = {
+  },
   html = {},
   lua_ls = {
     Lua = {
