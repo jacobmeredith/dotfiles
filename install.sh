@@ -4,6 +4,7 @@ if ! command -v brew &>/dev/null; then
 	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+brew install starship
 brew install fzf
 brew install neovim
 brew install nvm
@@ -28,3 +29,4 @@ stow -t ~/.config -S nvim
 stow -t ~/.config -S tmux
 stow -t ~/.config -S alacritty
 stow -t ~/.config -S oh-my-posh
+stow -t ~/.config -S starship

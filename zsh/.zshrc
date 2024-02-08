@@ -8,7 +8,9 @@ export PATH=$PATH:$GOROOT/bin
 
 export PATH=/opt/homebrew/bin:$PATH:$GOPATH
 
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/my-oh-my-posh.omp.json)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+eval "$(starship init zsh)"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"

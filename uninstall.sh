@@ -5,7 +5,9 @@ stow -t ~/.config -D nvim
 stow -t ~/.config -D tmux
 stow -t ~/.config -D alacritty
 stow -t ~/.config -D oh-my-posh
+stow -t ~/.config -D starship
 
+brew uninstall starship
 brew uninstall fzf
 brew uninstall neovim
 brew uninstall nvm
