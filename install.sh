@@ -1,32 +1,31 @@
 #!/usr/bin/env bash
 
 if ! command -v brew &>/dev/null; then
-	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	exit 1
 fi
 
-brew install starship
-brew install fzf
-brew install neovim
-brew install nvm
-brew install pnpm
-brew install stow
-brew install tmux
-brew install wget
-brew install tree-sitter
-brew install ripgrep
-brew install yarn
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
-brew install fastfetch
+curl https://get.volta.sh | bash
 
-brew install --cask alacritty
-brew install --cask font-jetbrains-mono-nerd-font
+mkdir ~/.config
+
+brew install neovim
+brew install starship
+brew install fastfetch
+brew install ripgrep
+brew install fzf
+brew install tmux
+brew install tree-sitter
+brew install jesseduffield/lazygit/lazygit
+brew install stow
+
 brew install --cask raycast
-brew install --cask fork
-brew install --cask font-symbols-only-nerd-font 
+brew install --cask font-jetbrains-mono-nerd-font
+brew install --cask font-symbols-only-nerd-font
+brew install --cask warp
+brew install --cask google-chrome
 
 stow -t ~ -S zsh
-stow -t ~/.config -S nvim
-stow -t ~/.config -S tmux
-stow -t ~/.config -S alacritty
-stow -t ~/.config -S oh-my-posh
+stow -t ~ -S warp
 stow -t ~/.config -S starship
+stow -t ~/.config -S tmux
+stow -t ~/.config -S nvim

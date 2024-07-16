@@ -36,8 +36,6 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
-vim.o.completeopt = true
-
 vim.o.termguicolors = true
 
 vim.opt.fillchars = { eob = " " }

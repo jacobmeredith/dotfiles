@@ -1,33 +1,13 @@
-export NVM_DIR=~/.nvm
-
-export GOPATH=$HOME/go
-export GOROOT=/opt/homebrew/opt/go/libexec
-
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-
-export PATH=/opt/homebrew/bin:$PATH:$GOPATH
-
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 eval "$(starship init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-plugins=(git zsh-syntax-highlighting)
-
-source $(brew --prefix nvm)/nvm.sh
-
-alias vim=nvim
-
-alias ga="git add"
-alias gs="git status"
-alias gc="git commit -m"
-alias gd="git diff"
-alias gp="git push"
-alias gch="git checkout"
-alias gaa="git add ."
-alias gac="git add -A && git commit -m"
-
-fastfetch
+# pnpm
+export PNPM_HOME="/Users/jakemeredith/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
