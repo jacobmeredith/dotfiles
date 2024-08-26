@@ -29,3 +29,4 @@ stow -t ~ -S warp
 stow -t ~/.config -S starship
 stow -t ~/.config -S tmux
 stow -t ~/.config -S nvim
+stow -t ~/.config -S aerospace
