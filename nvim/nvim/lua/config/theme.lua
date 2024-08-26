@@ -1,3 +1,5 @@
+vim.o.termguicolors = true
+
 vim.cmd.colorscheme("catppuccin")
 
 vim.wo.signcolumn = "yes"
