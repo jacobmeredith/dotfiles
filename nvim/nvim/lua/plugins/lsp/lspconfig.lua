@@ -84,6 +84,11 @@ return {
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
+				})
+			end,
+			["ts_ls"] = function()
+				lspconfig["ts_ls"].setup({
+					capabilities = capabilities,
 					root_dir = lsputil.root_pattern(".git"),
 				})
 			end,
