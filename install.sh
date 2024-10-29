@@ -21,12 +21,13 @@ brew install stow
 brew install --cask raycast
 brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask font-symbols-only-nerd-font
-brew install --cask warp
 brew install --cask google-chrome
+brew install --cask alacritty
 
 stow -t ~ -S zsh
-stow -t ~ -S warp
 stow -t ~/.config -S starship
 stow -t ~/.config -S tmux
 stow -t ~/.config -S nvim
 stow -t ~/.config -S aerospace
+stow -t ~/.config -S alacritty
+stow -t ~/.config -S sketchybar
