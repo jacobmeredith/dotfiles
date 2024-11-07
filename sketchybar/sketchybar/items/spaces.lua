@@ -55,7 +55,7 @@ for i = 1, 6, 1 do
 			height = 15,
 			corner_radius = 100,
 			color = spaces_colours[i],
-			border_width = 1,
+			border_width = 3,
 		},
 		popup = { background = { border_width = 5, border_color = colors.black } },
 	})
@@ -70,6 +70,7 @@ for i = 1, 6, 1 do
 			border_width = 1,
 			height = 18,
 			corner_radius = 100,
+			border_color = i == 1 and colors.catppuccin.mauve or colors.transparent,
 		},
 	})
 
@@ -94,11 +95,8 @@ for i = 1, 6, 1 do
 
 	space:subscribe("aerospace_workspace_change", function(env)
 		local selected = "space." .. env.FOCUSED_WORKSPACE == env.NAME
-		space:set({
-			background = { border_color = selected and colors.black or colors.bg2 },
-		})
 		space_bracket:set({
-			background = { border_color = selected and colors.catppuccin.mauve or colors.bg2 },
+			background = { border_color = selected and colors.catppuccin.mauve or colors.transparent },
 		})
 	end)
 
@@ -122,6 +120,8 @@ for i = 1, 6, 1 do
 
 	-- show_apps(i)
 end
+
+sbar.exec("aerospace workspace " .. 1)
 
 local space_window_observer = sbar.add("item", {
 	drawing = false,

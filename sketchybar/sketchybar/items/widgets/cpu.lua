@@ -58,11 +58,6 @@ cpu:subscribe("mouse.clicked", function(env)
 end)
 
 -- Background around the cpu item
-sbar.add("bracket", "widgets.cpu.bracket", { cpu.name }, {
-	background = { color = colors.catppuccin.base },
-})
-
--- Background around the cpu item
 sbar.add("item", "widgets.cpu.padding", {
 	position = "right",
 	width = settings.group_paddings,

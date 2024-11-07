@@ -4,7 +4,7 @@ local icons = require("icons")
 -- Padding item required because of bracket
 sbar.add("item", { width = 5 })
 
-local apple = sbar.add("item", {
+sbar.add("item", {
 	icon = {
 		font = { size = 16.0 },
 		string = icons.apple,
@@ -13,21 +13,12 @@ local apple = sbar.add("item", {
 	},
 	label = { drawing = false },
 	background = {
-		color = colors.catppuccin.base,
+		color = colors.transparent,
 		border_width = 0,
 	},
 	padding_left = 1,
 	padding_right = 1,
 	click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s 0",
-})
-
--- Double border for apple using a single item bracket
-sbar.add("bracket", { apple.name }, {
-	background = {
-		color = colors.transparent,
-		border_width = 0,
-		height = 30,
-	},
 })
 
 -- Padding item required because of bracket
