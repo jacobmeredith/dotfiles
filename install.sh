@@ -4,7 +4,9 @@ if ! command -v brew &>/dev/null; then
 	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-curl https://get.volta.sh | bash
+if ! command -v volta &>/dev/null; then
+	curl https://get.volta.sh | bash
+fi
 
 mkdir ~/.config
 
