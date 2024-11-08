@@ -24,6 +24,8 @@ brew install lua
 brew install nowplaying-cli
 brew install orbstack
 brew install switchaudio-osx
+brew install zsh-autosuggestions
+brew install tree
 
 brew tap FelixKratz/formulae
 brew install borders
