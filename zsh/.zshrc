@@ -23,3 +23,5 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+

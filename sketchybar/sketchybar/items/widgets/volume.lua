@@ -3,7 +3,6 @@ local icons = require("icons")
 local settings = require("settings")
 
 local steps = 5
-local circles = {}
 local circles_names = {}
 local muted = false
 
@@ -27,7 +26,6 @@ for i = steps, 1, -1 do
 	})
 
 	circles_names[i] = volume_circle.name
-	circles[i] = volume_circle
 end
 
 local volume_icon = sbar.add("item", "widgets.volume.icon", {

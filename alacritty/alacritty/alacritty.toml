@@ -1,9 +1,11 @@
 [window]
-opacity = 0.9
+blur = true
+opacity = 0.7
 decorations = "Transparent"
+dynamic_padding = true
 
 [font]
-size = 16.0
+size = 18.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
@@ -26,8 +28,8 @@ x = 0
 y = 0
 
 [window.padding]
-y = 35
-x = 2
+y = 30
+x = 10
 
 [general]
 import = [

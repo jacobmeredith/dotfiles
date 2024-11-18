@@ -21,9 +21,7 @@ brew install jesseduffield/lazygit/lazygit
 brew install stow
 brew install btop
 brew install lua
-brew install nowplaying-cli
 brew install orbstack
-brew install switchaudio-osx
 brew install zsh-autosuggestions
 brew install tree
 
