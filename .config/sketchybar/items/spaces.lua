@@ -121,7 +121,7 @@ for i = 1, 6, 1 do
 	-- show_apps(i)
 end
 
-sbar.exec("aerospace workspace " .. 1)
+sbar.exec("aerospace workspace 1")
 
 local space_window_observer = sbar.add("item", {
 	drawing = false,
@@ -140,7 +140,7 @@ local spaces_indicator = sbar.add("item", {
 })
 
 space_window_observer:subscribe("aerospace_focus_change", function()
-	show_apps()
+	-- show_apps()
 end)
 
 spaces_indicator:subscribe("swap_menus_and_spaces", function()

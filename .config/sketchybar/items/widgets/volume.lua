@@ -4,6 +4,7 @@ local settings = require("settings")
 
 local steps = 5
 local circles_names = {}
+local circles = {}
 local muted = false
 
 for i = steps, 1, -1 do
@@ -26,6 +27,7 @@ for i = steps, 1, -1 do
 	})
 
 	circles_names[i] = volume_circle.name
+	circles[i] = volume_circle
 end
 
 local volume_icon = sbar.add("item", "widgets.volume.icon", {
@@ -41,8 +43,6 @@ local volume_icon = sbar.add("item", "widgets.volume.icon", {
 			style = settings.font.style_map["Regular"],
 			size = 14.0,
 		},
-		border_width = 1,
-		border_color = colors.catppuccin.pink,
 	},
 	label = {
 		width = 25,
@@ -79,3 +79,28 @@ sbar.add("bracket", "widgets.volume.bracket", bracket_items, {
 		color = colors.catppuccin.base,
 	},
 })
+
+volume_icon:subscribe("volume_change", function(env)
+	local volume = tonumber(env.INFO)
+	local active_circles = math.ceil((volume / 100) * steps)
+
+	if volume > 0 then
+		muted = false
+		volume_icon:set({ icon = icons.volume._100 })
+	end
+
+	if volume == 0 then
+		muted = true
+		volume_icon:set({ icon = icons.volume._0 })
+	end
+
+	for i = 1, steps, 1 do
+		if i <= active_circles then
+			circles[i]:set({ background = { color = colors.catppuccin.pink } })
+		end
+
+		if i > active_circles then
+			circles[i]:set({ background = { color = colors.catppuccin.surface0 } })
+		end
+	end
+end)

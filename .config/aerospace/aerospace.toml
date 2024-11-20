@@ -3,7 +3,6 @@
 
 # It's not necessary to copy all keys to your config.
 # If the key is missing in your config, "default-config.toml" will serve as a fallback
-
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -13,11 +12,12 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
+  'exec-and-forget sketchybar',
   'exec-and-forget borders active_color=0xff9399b2 inactive_color=0xff414550 width=4.0 style=round hidpi=off',
 ]
 
 on-focus-changed = [
-  "exec-and-forget sketchybar --trigger aerospace_focus_change"
+  # "exec-and-forget sketchybar --trigger aerospace_focus_change"
 ]
 
 # Notify Sketchybar about workspace change
@@ -28,7 +28,7 @@ exec-on-workspace-change = [
 ]
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -56,6 +56,11 @@ key-mapping.preset = 'qwerty'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[exec]
+inherit-env-vars = true
+[exec.env-vars]
+PATH = '/run/current-system/sw/bin:${PATH}'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
