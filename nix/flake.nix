@@ -30,6 +30,7 @@
 	    pkgs.aerospace
             pkgs.alacritty
 	    pkgs.btop
+            pkgs.discord
 	    pkgs.fastfetch
 	    pkgs.fzf
 	    pkgs.google-chrome
@@ -45,6 +46,7 @@
             pkgs.tmux
 	    pkgs.tree
 	    pkgs.volta
+            pkgs.zsh-autosuggestions
           ];
 
           homebrew = {
@@ -83,16 +85,23 @@
               done
             '';
 
+          programs.zsh = {
+            enable = true;
+            enableCompletion = true;
+            enableSyntaxHighlighting = true;
+            promptInit = "source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+          };
+
           launchd.user.agents.aerospace = {
             command = "${pkgs.aerospace}/Applications/AeroSpace.app/Contents/MacOS/AeroSpace";
             serviceConfig = {
-              UserName = "jacobmeredith";
+              UserName = "jakemeredith";
               KeepAlive = true;
               RunAtLoad = true;
             };
           };
 
-          # launchd.user.jacobmeredith.felix = {
+          # launchd.user.jakemeredith.felix = {
           #   command = "${pkgs.sketchybar}/bin/sketchybar && ${pkgs.jankyborders}/borders";
           #   serviceConfig = {
           #     KeepAlive = true;
@@ -107,19 +116,23 @@
 	    dock.persistent-apps = [
 	      "${pkgs.alacritty}/Applications/Alacritty.app"
 	      "${pkgs.google-chrome}/Applications/Google Chrome.app"
+	      "${pkgs.discord}/Applications/Discord.app"
 	    ];
             dock.persistent-others = [];
 	    dock.show-recents = false;
 	    dock.orientation = "left";
 	    dock.launchanim = false;
 	    NSGlobalDomain._HIHideMenuBar = true;
+            finder.AppleShowAllFiles = true;
+            finder.CreateDesktop = false;
+            finder.FXPreferredViewStyle = "Nlsv";
+            finder.ShowPathbar = true;
 	  };
+
+          security.pam.enableSudoTouchIdAuth = true;
 
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
-
-          # Enable alternative shell support in nix-darwin.
-          programs.zsh.enable = true;
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -143,21 +156,21 @@
         modules = [
           configuration
           {
-            users.users.jacobmeredith.home = "/Users/jacobmeredith";
+            users.users.jakemeredith.home = "/Users/jakemeredith";
           }
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
-              user = "jacobmeredith";
+              user = "jakemeredith";
             };
           }
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jacobmeredith = import ./home.nix;
+            home-manager.users.jakemeredith = import ./home.nix;
           }
         ];
       };

@@ -13,8 +13,8 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  home.username = "jacobmeredith";
-  home.homeDirectory = "/Users/jacobmeredith";
+  home.username = "jakemeredith";
+  home.homeDirectory = "/Users/jakemeredith";
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
