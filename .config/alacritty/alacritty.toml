@@ -1,6 +1,5 @@
 [window]
 blur = true
-opacity = 0.7
 decorations = "Transparent"
 dynamic_padding = true
 

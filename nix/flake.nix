@@ -27,41 +27,45 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
-	    pkgs.aerospace
+            pkgs.aerospace
             pkgs.alacritty
-	    pkgs.btop
+            pkgs.bat
+            pkgs.btop
             pkgs.discord
-	    pkgs.fastfetch
-	    pkgs.fzf
-	    pkgs.google-chrome
-	    pkgs.jankyborders
+            pkgs.eza
+            pkgs.fastfetch
+            pkgs.fzf
+            pkgs.go
+            pkgs.google-chrome
+            pkgs.jankyborders
             pkgs.lazygit
-	    pkgs.lua5_4_compat
+            pkgs.lua5_4_compat
             pkgs.mkalias
             pkgs.neovim
-	    pkgs.ripgrep
-	    pkgs.sketchybar
+            pkgs.ripgrep
+            pkgs.rustup
+            pkgs.sketchybar
             pkgs.starship
-	    pkgs.stow
+            pkgs.stow
             pkgs.tmux
-	    pkgs.tree
-	    pkgs.volta
+            pkgs.tree
+            pkgs.volta
             pkgs.zsh-autosuggestions
           ];
 
           homebrew = {
             enable = true;
             casks = [
-	      "sf-symbols"
-	      "font-sf-mono"
-	      "font-sf-pro"
-	    ];
-	    onActivation.cleanup = "zap";
+              "sf-symbols"
+              "font-sf-mono"
+              "font-sf-pro"
+            ];
+            onActivation.cleanup = "zap";
           };
 
           fonts.packages = [
             (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
-	    pkgs.sketchybar-app-font
+            pkgs.sketchybar-app-font
           ];
 
           system.activationScripts.applications.text =
@@ -101,33 +105,29 @@
             };
           };
 
-          # launchd.user.jakemeredith.felix = {
-          #   command = "${pkgs.sketchybar}/bin/sketchybar && ${pkgs.jankyborders}/borders";
-          #   serviceConfig = {
-          #     KeepAlive = true;
-          #     RunAtLoad = true;
-          #   };
-          # };
-
           system.startup.chime = false;
 
-	  system.defaults = {
-	    dock.autohide = true;
-	    dock.persistent-apps = [
-	      "${pkgs.alacritty}/Applications/Alacritty.app"
-	      "${pkgs.google-chrome}/Applications/Google Chrome.app"
-	      "${pkgs.discord}/Applications/Discord.app"
-	    ];
-            dock.persistent-others = [];
-	    dock.show-recents = false;
-	    dock.orientation = "left";
-	    dock.launchanim = false;
-	    NSGlobalDomain._HIHideMenuBar = true;
-            finder.AppleShowAllFiles = true;
-            finder.CreateDesktop = false;
-            finder.FXPreferredViewStyle = "Nlsv";
-            finder.ShowPathbar = true;
-	  };
+          system.defaults = {
+            dock = {
+              autohide = true;
+              persistent-apps = [
+                "${pkgs.alacritty}/Applications/Alacritty.app"
+                "${pkgs.google-chrome}/Applications/Google Chrome.app"
+                "${pkgs.discord}/Applications/Discord.app"
+              ];
+              persistent-others = [];
+              show-recents = false;
+              orientation = "left";
+              launchanim = false;
+            };
+            NSGlobalDomain._HIHideMenuBar = true;
+            finder = {
+              AppleShowAllFiles = true;
+              CreateDesktop = false;
+              FXPreferredViewStyle = "Nlsv";
+              ShowPathbar = true;
+            };
+          };
 
           security.pam.enableSudoTouchIdAuth = true;
 
