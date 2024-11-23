@@ -13,13 +13,6 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = true
 
-vim.o.statusline = '%#MyStatusLineFilename#%f %y %m %r %= %l/%L %c'
-
--- Define the custom highlight group for the filename
-vim.cmd 'highlight MyStatusLineFilename guibg=NONE guifg=#ffffff'
-vim.cmd 'highlight StatusLine guibg=NONE guifg=#ffffff'
-vim.cmd 'highlight StatusLineNC guibg=NONE guifg=#aaaaaa'
-
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
@@ -597,6 +590,8 @@ require('lazy').setup({
           return {
             CursorLineNR = { fg = colors.subtext0, bg = 'none' }, -- Current line number color
             LineNr = { fg = colors.overlay2, bg = 'none' }, -- Line number color
+            StatusLine = { fg = colors.text, bg = 'none' },
+            StatusLineNC = { fg = colors.overlay0, bg = 'none' },
           }
         end,
         default_integrations = true,
