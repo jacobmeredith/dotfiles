@@ -1,6 +1,7 @@
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 eval "$(starship init zsh)"
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export VOLTA_FEATURE_PNPM=1
@@ -26,7 +27,8 @@ fw() {
   aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
 
-alias ls="eza -l --icons"
-alias la="eza -TL 2 --icons"
+alias bt="btop"
 alias cat="bat"
+alias la="eza -TL 2 --icons"
 alias lg="lazygit"
+alias ls="eza -l --icons"
