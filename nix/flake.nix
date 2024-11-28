@@ -59,6 +59,7 @@
               "sf-symbols"
               "font-sf-mono"
               "font-sf-pro"
+              "notchnook"
             ];
             onActivation.cleanup = "zap";
           };
