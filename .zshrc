@@ -27,6 +27,11 @@ fw() {
   aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
 
+workspace() {
+  cd $1
+  tmux new-session -n neovim "nvim . ; zsh" \; new-window -n terminal "$2 ; zsh" \; attach
+}
+
 alias bt="btop"
 alias cat="bat"
 alias la="eza -TL 2 --icons"
