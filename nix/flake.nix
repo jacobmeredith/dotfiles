@@ -40,6 +40,7 @@
             pkgs.jankyborders
             pkgs.lazygit
             pkgs.lua5_4_compat
+            pkgs.mas
             pkgs.mkalias
             pkgs.neovim
             pkgs.ripgrep
@@ -56,11 +57,13 @@
           homebrew = {
             enable = true;
             casks = [
-              "sf-symbols"
               "font-sf-mono"
               "font-sf-pro"
               "notchnook"
+              "proxyman"
+              "sf-symbols"
             ];
+            masApps = {};
             onActivation.cleanup = "zap";
           };
 
@@ -115,6 +118,7 @@
                 "${pkgs.alacritty}/Applications/Alacritty.app"
                 "${pkgs.google-chrome}/Applications/Google Chrome.app"
                 "${pkgs.discord}/Applications/Discord.app"
+                "/Applications/Proxyman.app"
               ];
               persistent-others = [];
               show-recents = false;
