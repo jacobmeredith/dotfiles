@@ -50,12 +50,14 @@
             pkgs.stow
             pkgs.tmux
             pkgs.tree
-            pkgs.volta
             pkgs.zsh-autosuggestions
           ];
 
           homebrew = {
             enable = true;
+            brews = [
+              "nvm"
+            ];
             casks = [
               "font-sf-mono"
               "font-sf-pro"

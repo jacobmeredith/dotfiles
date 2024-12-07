@@ -56,3 +56,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+local node_version = 'v23.3.0'
+local nvm_dir = os.getenv 'HOME' .. '/.nvm/versions/node/' .. node_version .. '/bin'
+vim.env.PATH = nvm_dir .. ':' .. vim.env.PATH
