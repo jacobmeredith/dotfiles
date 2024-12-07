@@ -30,6 +30,13 @@ return {
       desc = 'Delete Buffer',
     },
     {
+      '<leader>gB',
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = 'Git Browse',
+    },
+    {
       '<leader>gb',
       function()
         Snacks.git.blame_line()
@@ -49,6 +56,22 @@ return {
         Snacks.rename.rename_file()
       end,
       desc = 'Rename File',
+    },
+    {
+      ']]',
+      function()
+        Snacks.words.jump(vim.v.count1)
+      end,
+      desc = 'Next Reference',
+      mode = { 'n', 't' },
+    },
+    {
+      '[[',
+      function()
+        Snacks.words.jump(-vim.v.count1)
+      end,
+      desc = 'Prev Reference',
+      mode = { 'n', 't' },
     },
   },
 }
